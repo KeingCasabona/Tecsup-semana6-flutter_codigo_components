@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -29,6 +30,18 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(height: 20),
+            Text(
+              'Flutter Components',
+              style: GoogleFonts.poppins(
+                fontSize: 20,
+                letterSpacing: 1,
+              ),
+            ),
+            SizedBox(
+              width: 160,
+              child: Divider(),
+            )
           ],
         ),
       ),
