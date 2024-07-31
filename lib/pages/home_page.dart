@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo_components/pages/alert_page.dart';
+import 'package:flutter_codigo_components/pages/avatar_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,7 +11,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical, //POR DEFECTO
-        padding: EdgeInsets.symmetric(vertical: 40),
+        padding: EdgeInsets.only(bottom: 40),
         child: SafeArea(
           child: Column(
             children: [
@@ -45,13 +47,16 @@ class HomePage extends StatelessWidget {
                 width: 160,
                 child: Divider(),
               ),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
-              ItemComponentWidget(),
+              ItemComponentWidget(
+                title: 'Avatar',
+                subTitle: 'Ir al detalle del avatar',
+                toPage: AvatarPage(),
+              ),
+              ItemComponentWidget(
+                title: 'Alert',
+                subTitle: 'Ir al detalle del alert',
+                toPage: AlertPage(),
+              ),
             ],
           ),
         ),
@@ -61,8 +66,15 @@ class HomePage extends StatelessWidget {
 }
 
 class ItemComponentWidget extends StatelessWidget {
-  const ItemComponentWidget({super.key});
+  ItemComponentWidget({
+    required this.title,
+    required this.subTitle,
+    required this.toPage,
+  });
 
+  final String title;
+  final String subTitle;
+  final Widget toPage;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -78,13 +90,16 @@ class ItemComponentWidget extends StatelessWidget {
             )
           ]),
       child: ListTile(
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => toPage));
+        },
         leading: Icon(
           Icons.check_circle_outline,
           color: Color.fromARGB(255, 12, 130, 44),
         ),
-        title: Text('Avatar', style: GoogleFonts.poppins()),
-        subtitle:
-            Text('Ir al detalle del avatar', style: GoogleFonts.poppins()),
+        title: Text(title, style: GoogleFonts.poppins()),
+        subtitle: Text(subTitle, style: GoogleFonts.poppins()),
         trailing: Icon(Icons.chevron_right, color: Colors.blue),
       ),
     );
