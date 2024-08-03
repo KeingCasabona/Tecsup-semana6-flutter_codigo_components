@@ -26,7 +26,7 @@ class CardPage extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  'Ullamco ut ut non incididunt. Do aliqua ea eu ipsum labore duis esse id ut adipisicing exercitation anim commodo laboris. Pariatur velit voluptate ad consequat cillum nulla excepteur sit occaecat cillum laboris adipisicing laboris. Voluptate laboris elit non dolor proident eiusmod. Nostrud ullamco deserunt minim est magna dolor anim eiusmod adipisicing ex dolor incididunt irure. Reprehenderit tempor in occaecat fugiat ea voluptate eu incididunt et ipsum.',
+                  '666Ullamco ut ut non incididunt. Do aliqua ea eu ipsum labore duis esse id ut adipisicing exercitation anim commodo laboris. Pariatur velit voluptate ad consequat cillum nulla excepteur sit occaecat cillum laboris adipisicing laboris. Voluptate laboris elit non dolor proident eiusmod. Nostrud ullamco deserunt minim est magna dolor anim eiusmod adipisicing ex dolor incididunt irure. Reprehenderit tempor in occaecat fugiat ea voluptate eu incididunt et ipsum.',
                   textAlign: TextAlign.center,
                   maxLines: 5,
                   overflow: TextOverflow.ellipsis,
@@ -70,6 +70,54 @@ class CardPage extends StatelessWidget {
               ],
             ),
           ),
+          Container(
+            margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1),
+                  offset: Offset(8, 8),
+                  blurRadius: 10,
+                ),
+              ],
+            ),
+            child: Row(
+              children: [
+                Image.asset(
+                  'assets/images/image01.png',
+                  height: 120,
+                ),
+                SizedBox(width: 14),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Fugiat enim ullamco sunt culpa.',
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 4),
+                      Text(
+                        'Elit sit ut aliqua sunt do proident. Nulla exercitation elit anim commodo incididunt deserunt aute enim dolor nulla id. Fugiat nulla aliqua deserunt velit. Quis qui duis aliquip quis eu voluptate voluptate pariatur consectetur cillum veniam. Laborum quis esse eiusmod laborum duis ad proident ad commodo pariatur laboris. Eu incididunt ut elit occaecat ut nostrud minim.',
+                        maxLines: 5,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
