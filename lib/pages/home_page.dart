@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo_components/pages/alert_page.dart';
 import 'package:flutter_codigo_components/pages/avatar_page.dart';
+import 'package:flutter_codigo_components/pages/card_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
@@ -48,15 +49,19 @@ class HomePage extends StatelessWidget {
                 child: Divider(),
               ),
               ItemComponentWidget(
-                title: 'Avatar',
-                subTitle: 'Ir al detalle del avatar',
-                toPage: AvatarPage(),
-              ),
+                  title: 'Avatar',
+                  subTitle: 'Ir al detalle del avatar',
+                  toPage: AvatarPage()),
               ItemComponentWidget(
                 title: 'Alert',
                 subTitle: 'Ir al detalle del alert',
                 toPage: AlertPage(),
               ),
+              ItemComponentWidget(
+                title: 'Cards',
+                subTitle: 'Ir al detalle del card',
+                toPage: CardPage(),
+              )
             ],
           ),
         ),
