@@ -28,7 +28,8 @@ class AvatarPage extends StatelessWidget {
         children: [
           FadeInImage(
             image: NetworkImage(
-                'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+              'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            ),
             placeholder: AssetImage('assets/gif/loading.gif'),
             fit: BoxFit.cover,
             fadeInDuration: Duration(milliseconds: 1300),
