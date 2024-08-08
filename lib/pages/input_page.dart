@@ -5,8 +5,15 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class InputPage extends StatelessWidget {
+class InputPage extends StatefulWidget {
   const InputPage({super.key});
+
+  @override
+  State<InputPage> createState() => _InputPageState();
+}
+
+class _InputPageState extends State<InputPage> {
+  bool isInvisible = true;
 
   @override
   Widget build(BuildContext context) {
@@ -117,6 +124,23 @@ class InputPage extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              obscureText: isInvisible,
+              //obscuringCharacter: 'X',
+              decoration: InputDecoration(
+                  label: Text('Contrasena'),
+                  suffixIcon: IconButton(
+                    icon: isInvisible
+                        ? Icon(Icons.visibility_off)
+                        : Icon(Icons.remove_red_eye),
+                    onPressed: () {
+                      setState(() {
+                        isInvisible = !isInvisible;
+                      });
+                    },
+                  )),
             ),
           ],
         ),
