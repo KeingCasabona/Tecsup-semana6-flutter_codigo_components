@@ -14,6 +14,10 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   bool isInvisible = true;
+  String textGeneral = '';
+  final TextEditingController _myController =
+      TextEditingController(text: 'Texto por defecto...');
+  //final TextEditingController _myController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -147,9 +151,9 @@ class _InputPageState extends State<InputPage> {
               style: GoogleFonts.poppins(),
               onTap: () {},
               onChanged: (value) {
-                print(value);
+                textGeneral = value;
               },
-              maxLength: 8,
+              //maxLength: 8,
               decoration: InputDecoration(
                 counterText: '',
               ),
@@ -158,6 +162,21 @@ class _InputPageState extends State<InputPage> {
               readOnly: false,
               onSubmitted: (value) {
                 print(value);
+              },
+              controller: _myController,
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              child: Text('Obtener el valor de onChange'),
+              onPressed: () {
+                print(_myController.text);
+              },
+            ),
+            ElevatedButton(
+              child: Text('Reset'),
+              onPressed: () {
+                //_myController.text = '';
+                _myController.clear();
               },
             ),
           ],
