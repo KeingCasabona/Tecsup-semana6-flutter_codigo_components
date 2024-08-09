@@ -142,6 +142,24 @@ class _InputPageState extends State<InputPage> {
                     },
                   )),
             ),
+            SizedBox(height: 20),
+            TextField(
+              style: GoogleFonts.poppins(),
+              onTap: () {},
+              onChanged: (value) {
+                print(value);
+              },
+              maxLength: 8,
+              decoration: InputDecoration(
+                counterText: '',
+              ),
+              keyboardType: TextInputType.text,
+              cursorColor: Colors.pinkAccent,
+              readOnly: false,
+              onSubmitted: (value) {
+                print(value);
+              },
+            ),
           ],
         ),
       ),
