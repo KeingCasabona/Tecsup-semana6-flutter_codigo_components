@@ -3,6 +3,7 @@ import 'package:flutter_codigo_components/pages/alert_page.dart';
 import 'package:flutter_codigo_components/pages/avatar_page.dart';
 import 'package:flutter_codigo_components/pages/card_page.dart';
 import 'package:flutter_codigo_components/pages/input_page.dart';
+import 'package:flutter_codigo_components/pages/selection_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
@@ -67,7 +68,12 @@ class HomePage extends StatelessWidget {
                 title: 'Inputs',
                 subTitle: 'Ir al detalle de los Inputs',
                 toPage: InputPage(),
-              )
+              ),
+              ItemComponentWidget(
+                title: 'Selections',
+                subTitle: 'Ir al detalle de los Selections',
+                toPage: SelectionPage(),
+              ),
             ],
           ),
         ),
