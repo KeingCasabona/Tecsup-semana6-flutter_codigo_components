@@ -10,6 +10,7 @@ class SelectionPage extends StatefulWidget {
 class _SelectionPageState extends State<SelectionPage> {
   TextEditingController dateController = TextEditingController();
   bool isDateSelected = false;
+  int selectedValue = 1;
 
   selectedDate() async {
     DateTime? dateSelected = await showDatePicker(
@@ -51,6 +52,36 @@ class _SelectionPageState extends State<SelectionPage> {
                 selectedDate();
               },
             ),
+            SizedBox(height: 20),
+            DropdownButton(
+              value: selectedValue,
+              items: [
+                DropdownMenuItem(
+                  child: Text('Elemento 1'),
+                  value: 1,
+                ),
+                DropdownMenuItem(
+                  child: Text('Elemento 2'),
+                  value: 2,
+                ),
+                DropdownMenuItem(
+                  child: Text('Elemento 3'),
+                  value: 3,
+                ),
+                DropdownMenuItem(
+                  child: Text('Elemento 4'),
+                  value: 4,
+                ),
+                DropdownMenuItem(
+                  child: Text('Elemento 5'),
+                  value: 5,
+                ),
+              ],
+              onChanged: (int? value) {
+                selectedValue = value!;
+                setState(() {});
+              },
+            )
           ],
         ),
       ),
