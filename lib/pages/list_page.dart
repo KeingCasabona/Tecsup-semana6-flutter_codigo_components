@@ -127,6 +127,40 @@ class _ListPageState extends State<ListPage> {
     ]
   };
 
+  showDetailHero(BuildContext context, int index) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(teamMap['members'][index]['name']),
+          content: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Image.network(teamMap['members'][index]['image']),
+              SizedBox(height: 20),
+              Text('EDAD: ${teamMap['members'][index]['age']}'),
+              SizedBox(height: 4),
+              Text(
+                  'IDENTIDAD SECRETA: ${teamMap['members'][index]['secretIdentity']}'),
+              SizedBox(height: 4),
+              Text(
+                  'PODERES: ${teamMap['members'][index]['powers'].join(', ')}'),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('Cerrar'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,6 +189,9 @@ class _ListPageState extends State<ListPage> {
             title: Text(teamMap['members'][index]['name']),
             subtitle: Text(teamMap['members'][index]['secretIdentity']),
             trailing: Icon(Icons.view_carousel),
+            onTap: () {
+              showDetailHero(context, index);
+            },
           );
         },
       ),
