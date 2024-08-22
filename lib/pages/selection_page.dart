@@ -53,34 +53,51 @@ class _SelectionPageState extends State<SelectionPage> {
               },
             ),
             SizedBox(height: 20),
-            DropdownButton(
-              value: selectedValue,
-              items: [
-                DropdownMenuItem(
-                  child: Text('Elemento 1'),
-                  value: 1,
-                ),
-                DropdownMenuItem(
-                  child: Text('Elemento 2'),
-                  value: 2,
-                ),
-                DropdownMenuItem(
-                  child: Text('Elemento 3'),
-                  value: 3,
-                ),
-                DropdownMenuItem(
-                  child: Text('Elemento 4'),
-                  value: 4,
-                ),
-                DropdownMenuItem(
-                  child: Text('Elemento 5'),
-                  value: 5,
-                ),
-              ],
-              onChanged: (int? value) {
-                selectedValue = value!;
-                setState(() {});
-              },
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 4),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 193, 192, 192),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.4),
+                    blurRadius: 12,
+                    offset: Offset(6, 6),
+                  ),
+                ],
+              ),
+              child: DropdownButton(
+                isExpanded: true,
+                underline: Container(),
+                value: selectedValue,
+                icon: Icon(Icons.keyboard_arrow_down, color: Colors.white),
+                items: [
+                  DropdownMenuItem(
+                    child: Text('Elemento 1'),
+                    value: 1,
+                  ),
+                  DropdownMenuItem(
+                    child: Text('Elemento 2'),
+                    value: 2,
+                  ),
+                  DropdownMenuItem(
+                    child: Text('Elemento 3'),
+                    value: 3,
+                  ),
+                  DropdownMenuItem(
+                    child: Text('Elemento 4'),
+                    value: 4,
+                  ),
+                  DropdownMenuItem(
+                    child: Text('Elemento 5'),
+                    value: 5,
+                  ),
+                ],
+                onChanged: (int? value) {
+                  selectedValue = value!;
+                  setState(() {});
+                },
+              ),
             )
           ],
         ),
